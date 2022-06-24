@@ -11,21 +11,22 @@ function redBox(){
             if(i % 2 === 0){
                 if(j % 2 === 0){   
                     boxProperties(div);
-                    div.style.backgroundColor = 'red';
+                    div.style.backgroundColor = `rgb${randomColors()}`;
+                    console.log(`${randomColors()}`)
                     container.append(div);
                 }else{
                     boxProperties(div);
-                    div.style.backgroundColor = 'black';
+                    div.style.backgroundColor = `rgb${randomColors()}`;
                     container.append(div)
             }
         }else{
             if(j % 2 === 0){ 
                 boxProperties(div);
-                div.style.backgroundColor = 'black';
+                div.style.backgroundColor = `rgb${randomColors()}`;
                 container.append(div);
             }else{
                 boxProperties(div);
-                div.style.backgroundColor = 'red';
+                div.style.backgroundColor = `rgb${randomColors()}`;
                 container.append(div)
             }
         }
@@ -40,4 +41,12 @@ function boxProperties(div){
     div.style.float = "left"; 
     div.style.paddingBottom = "12.0%";
 }
+
+function randomColors(){
+    var red = Math.floor(Math.random()* 255);
+    var green =Math.floor(Math.random()* 255);
+    var blue = Math.floor(Math.random()* 255);
+    return `(${red},${green},${blue})`
+}
+
 redBox()
